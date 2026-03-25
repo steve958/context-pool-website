@@ -9,8 +9,8 @@ const tabs = [
     steps: [
       {
         title: "Clone the repo",
-        code: `git clone https://github.com/your-org/context-pool.git
-cd context-pool`,
+        code: `git clone https://github.com/steve958/Context-Pool.git
+cd Context-Pool`,
       },
       {
         title: "Create config",
@@ -27,8 +27,8 @@ echo "OPENAI_API_KEY=sk-proj-..." > .env
 echo "API_KEY=your-secret-here" >> .env`,
       },
       {
-        title: "Start",
-        code: `docker-compose up --build
+        title: "Start (pulls pre-built images — no build needed)",
+        code: `docker-compose -f docker-compose.hub.yml up
 
 # UI  → http://localhost:3000
 # API → http://localhost:8000/docs`,

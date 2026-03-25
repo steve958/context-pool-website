@@ -123,7 +123,7 @@ export default function Hero() {
             Get started →
           </a>
           <a
-            href="https://github.com/your-org/context-pool"
+            href="https://github.com/steve958/Context-Pool"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -186,9 +186,9 @@ export default function Hero() {
 function TerminalDemo() {
   const lines = [
     { type: "comment", text: "# 3 commands to get started" },
-    { type: "cmd", text: "git clone https://github.com/your-org/context-pool" },
-    { type: "cmd", text: "echo 'API_KEY=sk-...' > .env" },
-    { type: "cmd", text: "docker-compose up --build" },
+    { type: "cmd", text: "git clone https://github.com/steve958/Context-Pool.git" },
+    { type: "cmd", text: "cp config.example.yaml config/config.yaml" },
+    { type: "cmd", text: "docker-compose -f docker-compose.hub.yml up" },
     { type: "output", text: "✓  backend   ready  http://localhost:8000" },
     { type: "output", text: "✓  frontend  ready  http://localhost:3000" },
   ];

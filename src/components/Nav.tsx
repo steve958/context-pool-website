@@ -64,7 +64,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="https://github.com/your-org/context-pool"
+            href="https://github.com/steve958/Context-Pool"
             target="_blank"
             rel="noopener noreferrer"
             style={{

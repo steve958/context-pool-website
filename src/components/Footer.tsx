@@ -8,7 +8,7 @@ export default function Footer() {
     { label: "API", href: "#api" },
     { label: "Use cases", href: "#usecases" },
     { label: "FAQ", href: "#faq" },
-    { label: "GitHub", href: "https://github.com/your-org/context-pool" },
+    { label: "GitHub", href: "https://github.com/steve958/Context-Pool" },
   ];
 
   return (
