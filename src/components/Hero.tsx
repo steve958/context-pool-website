@@ -23,7 +23,7 @@ export default function Hero() {
           top: "30%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 900,
+          width: "min(900px, 100vw)",
           height: 600,
           borderRadius: "50%",
           background: "radial-gradient(ellipse, rgba(124,106,247,0.12) 0%, transparent 70%)",
