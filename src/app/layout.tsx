@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const mono  = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
-const SITE_URL = "https://contextpool.app";
+const SITE_URL = "https://www.contextpool.dev";
 
 export const viewport: Viewport = {
   width: "device-width",
