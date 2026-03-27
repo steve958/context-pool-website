@@ -57,5 +57,5 @@ body::before {
 }
 
 /* Utils */
-.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-.container-sm { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+.container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+.container-sm { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }

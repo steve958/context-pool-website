@@ -49,6 +49,7 @@ export default function Hero() {
         style={{
           position: "relative",
           textAlign: "center",
+          width: "100%",
           paddingTop: isMobile ? 48 : 80,
           paddingBottom: isMobile ? 64 : 100,
         }}
@@ -61,7 +62,7 @@ export default function Hero() {
             alt="Context Pool"
             style={{
               display: "block",
-              height: isMobile ? 72 : 110,
+              height: isMobile ? 110 : 140,
               width: "auto",
               filter: "drop-shadow(0 0 32px rgba(138,43,226,0.5))",
             }}
@@ -249,7 +250,7 @@ function TerminalDemo() {
         </span>
       </div>
       {/* Lines */}
-      <div style={{ padding: "18px 20px", fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 2, overflowX: "auto" }}>
+      <div style={{ padding: "18px 20px", fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 2, overflowX: "auto", minWidth: 0 }}>
         {lines.map((l, i) => (
           <div key={i} style={{ display: "flex", gap: 10, alignItems: "baseline", minWidth: "max-content" }}>
             {l.type !== "output" && l.type !== "comment" && (
