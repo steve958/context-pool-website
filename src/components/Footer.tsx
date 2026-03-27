@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Logo */}
           <div style={{ textAlign: "center" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/newlogo-transparent.png" alt="Context Pool" style={{ height: 40, width: "auto", display: "inline-block", marginBottom: 10 }} />
+            <img src="/newlogo-transparent.png" alt="Context Pool" loading="lazy" style={{ height: 40, width: "auto", display: "inline-block", marginBottom: 10 }} />
             <div style={{ fontSize: 13, color: "var(--text-3)" }}>
               Self-hosted document Q&A without embeddings · Open source
             </div>

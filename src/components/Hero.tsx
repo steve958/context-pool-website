@@ -60,6 +60,8 @@ export default function Hero() {
           <img
             src="/newlogo-transparent.png"
             alt="Context Pool"
+            loading="eager"
+            fetchPriority="high"
             style={{
               display: "block",
               height: isMobile ? 110 : 140,
