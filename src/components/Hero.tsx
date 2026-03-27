@@ -44,8 +44,8 @@ export default function Hero() {
         {/* Logo mark above headline */}
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 28 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/notextlogo-transparent.png" alt="Context Pool"
-               style={{ display: "block", height: 120, width: "auto", filter: "drop-shadow(0 0 32px rgba(138,43,226,0.5))" }} />
+          <img src="/newlogo-transparent.png" alt="Context Pool"
+               style={{ display: "block", height: 110, width: "auto", filter: "drop-shadow(0 0 32px rgba(138,43,226,0.5))" }} />
         </div>
 
         {/* Badge */}
