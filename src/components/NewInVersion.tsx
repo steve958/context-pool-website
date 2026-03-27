@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ChevronUp, ExternalLink, BookOpen } from "lucide-react";
 
 // ============================================================================
 // Feature Data - ADD NEW FEATURES HERE
@@ -100,8 +99,7 @@ function FeatureCard({ feature }: { feature: Feature }) {
                 href={feature.learnMore}
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
               >
-                Learn more
-                <ExternalLink className="h-3.5 w-3.5" />
+                Learn more ↗
               </Link>
             )}
             {feature.docsLink && (
@@ -109,7 +107,6 @@ function FeatureCard({ feature }: { feature: Feature }) {
                 href={feature.docsLink}
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors"
               >
-                <BookOpen className="h-3.5 w-3.5" />
                 Documentation
               </Link>
             )}
@@ -147,11 +144,7 @@ function VersionSection({ release }: { release: VersionRelease }) {
           <span className="text-sm">
             {release.features.length} feature{release.features.length !== 1 ? "s" : ""}
           </span>
-          {isExpanded ? (
-            <ChevronUp className="h-5 w-5" />
-          ) : (
-            <ChevronDown className="h-5 w-5" />
-          )}
+          <span className="text-sm">{isExpanded ? "▲" : "▼"}</span>
         </div>
       </button>
 
@@ -227,8 +220,7 @@ export default function NewInVersion() {
             href="/changelog"
             className="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
           >
-            View complete changelog
-            <ExternalLink className="h-4 w-4" />
+            View complete changelog ↗
           </Link>
         </div>
       </div>
