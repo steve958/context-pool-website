@@ -37,10 +37,7 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/icon.svg" alt="Context Pool icon" width={28} height={28} style={{ display: "block" }} />
-          <span style={{ fontWeight: 700, fontSize: 17, color: "var(--text)", letterSpacing: "-0.02em" }}>
-            Context Pool
-          </span>
+          <img src="/image.png" alt="Context Pool" height={32} style={{ display: "block", width: "auto" }} />
         </a>
 
         {/* Desktop links */}
