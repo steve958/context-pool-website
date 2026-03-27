@@ -27,13 +27,11 @@ export const metadata: Metadata = {
       "Self-hosted document Q&A without embeddings or vector databases. Every chunk is checked. Every answer is cited.",
     type: "website",
     url: SITE_URL,
-    images: [{ url: "/image.png", width: 1200, height: 630, alt: "Context Pool" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Context Pool",
     description: "Self-hosted document Q&A without embeddings. Open source.",
-    images: ["/image.png"],
   },
   icons: {
     icon: [
