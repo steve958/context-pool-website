@@ -44,7 +44,7 @@ export default function Hero() {
         {/* Logo mark above headline */}
         <div style={{ display: "flex", justifyContent: "center", marginBottom: 28 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/image.png" alt="Context Pool" height={90}
+          <img src="/logo-transparent.png" alt="Context Pool" height={90}
                style={{ display: "block", width: "auto", filter: "drop-shadow(0 0 24px rgba(0,180,255,0.35))" }} />
         </div>
 
