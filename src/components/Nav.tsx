@@ -37,7 +37,7 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-transparent.png" alt="Context Pool" height={26} style={{ display: "block", width: "auto" }} />
+          <img src="/logo-transparent.png" alt="Context Pool" style={{ display: "block", height: 26, width: "auto" }} />
         </a>
 
         {/* Desktop links */}
