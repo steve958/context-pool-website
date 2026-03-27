@@ -21,11 +21,10 @@ export default function Footer() {
     >
       <div className="container">
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 28 }}>
-          {/* Logo + tagline */}
+          {/* Logo */}
           <div style={{ textAlign: "center" }}>
-            <div style={{ fontWeight: 800, fontSize: 18, color: "var(--text)", letterSpacing: "-0.03em", marginBottom: 6 }}>
-              Context Pool
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/newlogo-transparent.png" alt="Context Pool" style={{ height: 40, width: "auto", display: "inline-block", marginBottom: 10 }} />
             <div style={{ fontSize: 13, color: "var(--text-3)" }}>
               Self-hosted document Q&A without embeddings · Open source
             </div>

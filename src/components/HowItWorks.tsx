@@ -1,5 +1,9 @@
 "use client";
+import { useIsMobile } from "../hooks/useIsMobile";
+
 export default function HowItWorks() {
+  const isMobile = useIsMobile();
+
   const steps = [
     {
       n: "01",
@@ -36,7 +40,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" style={{ padding: "100px 0" }}>
+    <section id="how-it-works" style={{ padding: isMobile ? "64px 0" : "100px 0" }}>
       <div className="container">
         <SectionLabel>Architecture</SectionLabel>
         <SectionTitle>How Context Pool works</SectionTitle>
@@ -48,77 +52,55 @@ export default function HowItWorks() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 2,
-            marginTop: 56,
-            position: "relative",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(4, 1fr)",
+            gap: isMobile ? 12 : 2,
+            marginTop: 48,
           }}
         >
           {steps.map((s, i) => (
-            <div key={s.n} style={{ position: "relative" }}>
-              {/* Connector arrow */}
-              {i < steps.length - 1 && (
-                <div
-                  style={{
-                    position: "absolute",
-                    right: -1,
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    zIndex: 1,
-                    color: "var(--border-bright)",
-                    fontSize: 18,
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                />
-              )}
+            <div
+              key={s.n}
+              style={{
+                background: "var(--surface)",
+                border: "1px solid var(--border)",
+                borderRadius: isMobile
+                  ? 12
+                  : i === 0
+                  ? "12px 0 0 12px"
+                  : i === steps.length - 1
+                  ? "0 12px 12px 0"
+                  : 0,
+                padding: "28px 24px",
+                position: "relative",
+                overflow: "hidden",
+                transition: "border-color 0.2s",
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = s.color + "60")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
+            >
               <div
                 style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                  borderRadius: i === 0 ? "12px 0 0 12px" : i === steps.length - 1 ? "0 12px 12px 0" : 0,
-                  padding: "32px 28px",
-                  height: "100%",
-                  position: "relative",
-                  overflow: "hidden",
-                  transition: "border-color 0.2s",
+                  position: "absolute", top: -40, right: -40,
+                  width: 120, height: 120, borderRadius: "50%",
+                  background: `radial-gradient(circle, ${s.color}18 0%, transparent 70%)`,
+                  pointerEvents: "none",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.borderColor = s.color + "60")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.borderColor = "var(--border)")}
+              />
+              <div style={{ fontSize: 11, fontWeight: 700, color: s.color, letterSpacing: "0.1em", marginBottom: 12, fontFamily: "var(--font-mono)" }}>
+                STEP {s.n}
+              </div>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text)", marginBottom: 10, letterSpacing: "-0.02em" }}>
+                {s.title}
+              </h3>
+              <p style={{ fontSize: 14, color: "var(--text-2)", lineHeight: 1.7, marginBottom: 16 }}>{s.description}</p>
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--text-3)",
+                  padding: "6px 10px", background: "var(--surface-2)", borderRadius: 6,
+                  borderLeft: `2px solid ${s.color}`, overflowX: "auto", whiteSpace: "nowrap",
+                }}
               >
-                {/* Glow */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: -40,
-                    right: -40,
-                    width: 120,
-                    height: 120,
-                    borderRadius: "50%",
-                    background: `radial-gradient(circle, ${s.color}18 0%, transparent 70%)`,
-                    pointerEvents: "none",
-                  }}
-                />
-                <div style={{ fontSize: 11, fontWeight: 700, color: s.color, letterSpacing: "0.1em", marginBottom: 12, fontFamily: "var(--font-mono)" }}>
-                  STEP {s.n}
-                </div>
-                <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--text)", marginBottom: 12, letterSpacing: "-0.02em" }}>
-                  {s.title}
-                </h3>
-                <p style={{ fontSize: 14, color: "var(--text-2)", lineHeight: 1.7, marginBottom: 16 }}>{s.description}</p>
-                <div
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: 11,
-                    color: "var(--text-3)",
-                    padding: "6px 10px",
-                    background: "var(--surface-2)",
-                    borderRadius: 6,
-                    borderLeft: `2px solid ${s.color}`,
-                  }}
-                >
-                  {s.detail}
-                </div>
+                {s.detail}
               </div>
             </div>
           ))}
@@ -127,11 +109,11 @@ export default function HowItWorks() {
         {/* Guarantee callout */}
         <div
           style={{
-            marginTop: 40,
+            marginTop: 32,
             background: "rgba(124,106,247,0.06)",
             border: "1px solid rgba(124,106,247,0.2)",
             borderRadius: 12,
-            padding: "24px 32px",
+            padding: isMobile ? "20px" : "24px 32px",
             display: "flex",
             alignItems: "flex-start",
             gap: 16,
@@ -163,7 +145,7 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <h2
       style={{
-        fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+        fontSize: "clamp(1.6rem, 4vw, 2.6rem)",
         fontWeight: 800,
         letterSpacing: "-0.03em",
         color: "var(--text)",
@@ -178,7 +160,7 @@ export function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export function SectionSub({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: "1.05rem", color: "var(--text-2)", maxWidth: 560, lineHeight: 1.7 }}>
+    <p style={{ fontSize: "1rem", color: "var(--text-2)", maxWidth: 560, lineHeight: 1.7 }}>
       {children}
     </p>
   );

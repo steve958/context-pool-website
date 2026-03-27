@@ -1,5 +1,9 @@
 "use client";
+import { useIsMobile } from "../hooks/useIsMobile";
+
 export default function Hero() {
+  const isMobile = useIsMobile();
+
   return (
     <section
       style={{
@@ -40,12 +44,28 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-sm" style={{ position: "relative", textAlign: "center", paddingTop: 80, paddingBottom: 100 }}>
+      <div
+        className="container-sm"
+        style={{
+          position: "relative",
+          textAlign: "center",
+          paddingTop: isMobile ? 48 : 80,
+          paddingBottom: isMobile ? 64 : 100,
+        }}
+      >
         {/* Logo mark above headline */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: 28 }}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 24 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/newlogo-transparent.png" alt="Context Pool"
-               style={{ display: "block", height: 110, width: "auto", filter: "drop-shadow(0 0 32px rgba(138,43,226,0.5))" }} />
+          <img
+            src="/newlogo-transparent.png"
+            alt="Context Pool"
+            style={{
+              display: "block",
+              height: isMobile ? 72 : 110,
+              width: "auto",
+              filter: "drop-shadow(0 0 32px rgba(138,43,226,0.5))",
+            }}
+          />
         </div>
 
         {/* Badge */}
@@ -58,7 +78,7 @@ export default function Hero() {
             border: "1px solid rgba(124,106,247,0.3)",
             borderRadius: 100,
             padding: "5px 14px",
-            marginBottom: 32,
+            marginBottom: 28,
           }}
         >
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--green)", display: "inline-block" }} />
@@ -68,26 +88,26 @@ export default function Hero() {
         {/* Headline */}
         <h1
           style={{
-            fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+            fontSize: "clamp(2rem, 6vw, 4.2rem)",
             fontWeight: 800,
             letterSpacing: "-0.04em",
             lineHeight: 1.1,
-            marginBottom: 24,
+            marginBottom: 20,
             background: "linear-gradient(135deg, var(--text) 40%, var(--accent-2) 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
         >
-          Document Q&A without<br />embeddings or guesswork
+          Document Q&A without{isMobile ? " " : <br />}embeddings or guesswork
         </h1>
 
         {/* Subheading */}
         <p
           style={{
-            fontSize: "clamp(1rem, 2.5vw, 1.2rem)",
+            fontSize: "clamp(0.95rem, 2.5vw, 1.2rem)",
             color: "var(--text-2)",
             maxWidth: 560,
-            margin: "0 auto 40px",
+            margin: "0 auto 36px",
             lineHeight: 1.7,
           }}
         >
@@ -97,19 +117,21 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 64 }}>
+        <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 56 }}>
           <a
             href="#quickstart"
             style={{
               background: "var(--accent)",
               color: "#fff",
-              padding: "13px 28px",
+              padding: isMobile ? "12px 24px" : "13px 28px",
               borderRadius: 10,
               fontWeight: 600,
               fontSize: 15,
               textDecoration: "none",
               transition: "opacity 0.15s, transform 0.15s",
               display: "inline-block",
+              width: isMobile ? "100%" : "auto",
+              textAlign: "center",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.opacity = "0.88";
@@ -129,7 +151,7 @@ export default function Hero() {
             style={{
               background: "var(--surface-2)",
               color: "var(--text)",
-              padding: "13px 28px",
+              padding: isMobile ? "12px 24px" : "13px 28px",
               borderRadius: 10,
               fontWeight: 600,
               fontSize: 15,
@@ -137,6 +159,8 @@ export default function Hero() {
               border: "1px solid var(--border)",
               transition: "border-color 0.15s, transform 0.15s",
               display: "inline-block",
+              width: isMobile ? "100%" : "auto",
+              textAlign: "center",
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
@@ -159,10 +183,10 @@ export default function Hero() {
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: 48,
+            gap: isMobile ? 24 : 48,
             flexWrap: "wrap",
-            marginTop: 56,
-            paddingTop: 40,
+            marginTop: 48,
+            paddingTop: 36,
             borderTop: "1px solid var(--border)",
           }}
         >
@@ -225,9 +249,9 @@ function TerminalDemo() {
         </span>
       </div>
       {/* Lines */}
-      <div style={{ padding: "18px 20px", fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 2 }}>
+      <div style={{ padding: "18px 20px", fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 2, overflowX: "auto" }}>
         {lines.map((l, i) => (
-          <div key={i} style={{ display: "flex", gap: 10, alignItems: "baseline" }}>
+          <div key={i} style={{ display: "flex", gap: 10, alignItems: "baseline", minWidth: "max-content" }}>
             {l.type !== "output" && l.type !== "comment" && (
               <span style={{ color: "var(--accent)", userSelect: "none" }}>$</span>
             )}
