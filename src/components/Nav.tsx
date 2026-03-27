@@ -18,6 +18,11 @@ export default function Nav() {
 
   const links = [
     { label: "How it works", href: "#how-it-works" },
+    { 
+      label: "New", 
+      href: "#new-in-version",
+      badge: "v1.3.0"  // Update this with each release
+    },
     { label: "Features", href: "#features" },
     { label: "Quick start", href: "#quickstart" },
     { label: "API", href: "#api" },
@@ -62,11 +67,28 @@ export default function Nav() {
                     padding: "6px 12px",
                     borderRadius: 6,
                     transition: "color 0.15s",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-2)")}
                 >
                   {l.label}
+                  {l.badge && (
+                    <span
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        padding: "2px 6px",
+                        borderRadius: 4,
+                        background: "var(--accent)",
+                        color: "white",
+                      }}
+                    >
+                      {l.badge}
+                    </span>
+                  )}
                 </a>
               ))}
               <a
@@ -154,9 +176,26 @@ export default function Nav() {
                     padding: "12px 4px",
                     borderBottom: "1px solid var(--border)",
                     transition: "color 0.15s",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
                   }}
                 >
                   {l.label}
+                  {l.badge && (
+                    <span
+                      style={{
+                        fontSize: 11,
+                        fontWeight: 600,
+                        padding: "2px 8px",
+                        borderRadius: 4,
+                        background: "var(--accent)",
+                        color: "white",
+                      }}
+                    >
+                      {l.badge}
+                    </span>
+                  )}
                 </a>
               ))}
               <a

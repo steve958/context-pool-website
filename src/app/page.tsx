@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import NewInVersion from "@/components/NewInVersion";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
 import Providers from "@/components/Providers";
@@ -15,6 +16,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <NewInVersion />  {/* New feature highlights - must be updated with every release */}
         <HowItWorks />
         <Features />
         <Providers />
