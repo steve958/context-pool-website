@@ -226,15 +226,6 @@ export default function NewInVersion() {
           </div>
         )}
 
-        {/* Changelog link */}
-        <div style={{ marginTop: 40 }}>
-          <Link
-            href="/changelog"
-            style={{ fontSize: 13.5, color: "var(--text-2)", textDecoration: "none" }}
-          >
-            View complete changelog ↗
-          </Link>
-        </div>
       </div>
     </section>
   );
