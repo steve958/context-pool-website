@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import WhyNotVectorRAG from "@/components/WhyNotVectorRAG";
 import NewInVersion from "@/components/NewInVersion";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
@@ -16,6 +17,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <WhyNotVectorRAG />
         <NewInVersion />  {/* New feature highlights - must be updated with every release */}
         <HowItWorks />
         <Features />

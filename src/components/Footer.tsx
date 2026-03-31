@@ -1,6 +1,7 @@
 "use client";
 export default function Footer() {
   const links = [
+    { label: "Why Context Pool", href: "#why-context-pool" },
     { label: "How it works", href: "#how-it-works" },
     { label: "Features", href: "#features" },
     { label: "Providers", href: "#providers" },
@@ -8,6 +9,7 @@ export default function Footer() {
     { label: "API", href: "#api" },
     { label: "Use cases", href: "#usecases" },
     { label: "FAQ", href: "#faq" },
+    { label: "Roadmap", href: "https://github.com/steve958/Context-Pool/blob/main/ROADMAP.md" },
     { label: "GitHub", href: "https://github.com/steve958/Context-Pool" },
   ];
 

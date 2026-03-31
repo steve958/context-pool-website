@@ -17,9 +17,10 @@ export default function Nav() {
   useEffect(() => { if (!isMobile) setMenuOpen(false); }, [isMobile]);
 
   const links = [
+    { label: "Why Context Pool", href: "#why-context-pool" },
     { label: "How it works", href: "#how-it-works" },
-    { 
-      label: "New", 
+    {
+      label: "New",
       href: "#new-in-version",
       badge: "v1.3.0"  // Update this with each release
     },

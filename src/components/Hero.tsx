@@ -148,9 +148,7 @@ export default function Hero() {
             Get started →
           </a>
           <a
-            href="https://github.com/steve958/Context-Pool"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#why-context-pool"
             style={{
               background: "var(--surface-2)",
               color: "var(--text)",
@@ -174,7 +172,7 @@ export default function Hero() {
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
             }}
           >
-            View on GitHub
+            See how it&apos;s different
           </a>
         </div>
 
@@ -202,6 +200,37 @@ export default function Hero() {
             <div key={label} style={{ textAlign: "center" }}>
               <div style={{ fontSize: "1.9rem", fontWeight: 800, color: "var(--accent-2)", letterSpacing: "-0.03em" }}>{n}</div>
               <div style={{ fontSize: 13, color: "var(--text-3)", marginTop: 2 }}>{label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Trust strip */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: isMobile ? 16 : 28,
+            flexWrap: "wrap",
+            marginTop: 32,
+          }}
+        >
+          {[
+            { icon: "🔒", text: "Self-hosted — your data never leaves your infra" },
+            { icon: "⚡", text: "No vector DB required" },
+            { icon: "📄", text: "MIT Licensed — open source forever" },
+          ].map(({ icon, text }) => (
+            <div
+              key={text}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 7,
+                fontSize: 12,
+                color: "var(--text-3)",
+              }}
+            >
+              <span>{icon}</span>
+              <span>{text}</span>
             </div>
           ))}
         </div>
