@@ -151,7 +151,7 @@ export default function WhyNotVectorRAG() {
             ]}
             answer={{
               text: "Yes. §18.3 explicitly caps liability for data breach damages. Confirmed by cross-reference in §19.1 and §21.2.",
-              quote: "§18.3 — "In no event shall either party be liable for indirect, incidental, or consequential damages arising from data loss or security breaches…"",
+              quote: '§18.3 — \u201cIn no event shall either party be liable for indirect, incidental, or consequential damages arising from data loss or security breaches\u2026\u201d',
               verdict: "hit",
               verdictLabel: "Correct — with verbatim citation",
             }}
