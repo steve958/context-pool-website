@@ -7,7 +7,7 @@ export default function CursorGlow() {
   const [isVisible, setIsVisible] = useState(false);
   const mousePos = useRef({ x: 0, y: 0 });
   const glowPos = useRef({ x: 0, y: 0 });
-  const rafId = useRef<number>();
+  const rafId = useRef<number | null>(null);
   const [renderPos, setRenderPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function CursorGlow() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       document.body.removeEventListener("mouseleave", handleMouseLeave);
-      if (rafId.current) cancelAnimationFrame(rafId.current);
+      if (rafId.current !== null) cancelAnimationFrame(rafId.current);
     };
   }, [isVisible]);
 
