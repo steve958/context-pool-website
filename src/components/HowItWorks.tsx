@@ -1,5 +1,6 @@
 "use client";
 import { useIsMobile } from "../hooks/useIsMobile";
+import ArchitectureDiagram from "./ArchitectureDiagram";
 
 export default function HowItWorks() {
   const isMobile = useIsMobile();
@@ -106,10 +107,27 @@ export default function HowItWorks() {
           ))}
         </div>
 
+        {/* Architecture Diagram */}
+        <div style={{ marginTop: 48 }}>
+          <div
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: "var(--text-3)",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              marginBottom: 16,
+            }}
+          >
+            Deployment Flow
+          </div>
+          <ArchitectureDiagram />
+        </div>
+
         {/* Guarantee callout */}
         <div
           style={{
-            marginTop: 32,
+            marginTop: 48,
             background: "rgba(124,106,247,0.06)",
             border: "1px solid rgba(124,106,247,0.2)",
             borderRadius: 12,

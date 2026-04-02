@@ -9,7 +9,9 @@ export default function Footer() {
     { label: "API", href: "#api" },
     { label: "Use cases", href: "#usecases" },
     { label: "FAQ", href: "#faq" },
+    { label: "Benchmarks", href: "#benchmarks" },
     { label: "Roadmap", href: "https://github.com/steve958/Context-Pool/blob/main/ROADMAP.md" },
+    { label: "Releases", href: "https://github.com/steve958/Context-Pool/releases" },
     { label: "GitHub", href: "https://github.com/steve958/Context-Pool" },
   ];
 
