@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import CursorGlow from "@/components/CursorGlow";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const mono  = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <CursorGlow />
         {children}
         <Analytics />
       </body>
